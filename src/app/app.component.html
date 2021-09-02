@@ -1,0 +1,23 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<!--<register></register>-->
+
+<div>
+
+<div class="alert alert-danger" *ngIf="!showErrorMessage && showErrorMessage != null"  role="alert">
+  username o password non corrette  
+</div>
+
+
+
+<navbar   [setAuthorizationNavigate] = "canNavigate" [getExpirationTime] = "expireTime" (logOutAtClick) = "logInOut($event)" [setLogged] = "isLogged"></navbar>
+
+
+<login (getServerResponse) = "getFeedbackFromBackend($event)"  (sendLoginBooleanValue) = "logInOut($event)"  (checkIfCanNavigate) = "checkIfCanNavigate($event)"  [setShowLogin] = "canNavigate" [logInOut] = "isLogged"></login>
+
+
+ <!--[logInOut] = "isLogged" 
+(exitIfTokenErased) = "exitIfTokenIsExpired($event)"
+(sendTokenExpiration) = "setExpireTime($event)"-->
+<router-outlet *ngIf="(canNavigate && isLogged)"></router-outlet>
+</div>

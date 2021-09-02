@@ -1,0 +1,5 @@
+<div class="container-fluid">
+  <addform [editCheck] = "checkIfEditOrAdd" (eventEmitterForUtenteCorrente) = "getCurrentPost($event)"  [setUtente] = "utenteCorrente" (checkIfEditOrPost) = "checkIfEdit($event)"></addform>
+  <postslist (checkIfEditOrInsert) = "checkIfEdit($event)" [setPost] = "utenteCorrente" (editedRow) = "getCurrentPost($event)"  [editCheck] = "checkIfEditOrAdd"></postslist>
+</div>
+

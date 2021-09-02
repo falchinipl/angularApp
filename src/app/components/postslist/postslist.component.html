@@ -1,0 +1,35 @@
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Cognome</th>
+        <th scope="col">Codice Fiscale</th>
+        <td>
+
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let utente of utenti">
+        
+        <td>{{utente.id}}
+          
+        </td>
+        <td>{{utente.firstName}}
+          
+        </td>
+        <td>{{utente.lastName}}
+         
+        </td>
+        <td>{{utente.fiscalCode}}
+          
+        </td>
+        <td>
+          <button  class="btn btn-primary" (click) = "edit(utente)">Edit</button>
+          <button style="margin-left:10px;" class="btn btn-danger" (click) = "delete(utente)">Delete</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
